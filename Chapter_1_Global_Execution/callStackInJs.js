@@ -1,4 +1,4 @@
-// execution_context_demo.js
+
 // ------------------------------------------------------------
 // Ye file JavaScript ke Creation Phase (Memory / Hoisting)
 // aur Execution Phase ko samjhane ke liye likhi gayi hai.
@@ -135,3 +135,32 @@ square4 = 16
 
 
 // Strict mode me undefined return karega (galti se global pollute na ho).
+
+
+
+// JavaScript (aur baaki programming languages) me Call Stack ko alag–alag naamon se jaana jaata hai:
+
+// Execution Context Stack
+
+// har function call ka execution context (memory + code) yahan push hota hai.
+
+// jab function return karta hai tab pop ho jata hai.
+
+// Program Stack
+
+// kyunki program ke saare functions/blocks isi stack par manage hote hain.
+
+// Control Stack
+
+// control flow (kis function me control abhi hai) track karne ke liye use hota hai.
+
+// Runtime Stack
+
+// runtime (jab code execute ho raha ho) par call stack ko runtime stack bhi bolte hain.
+
+// Machine Stack
+
+// low-level implementation me CPU/machine bhi isi stack ka use karti hai function calls aur return addresses manage karne ke liye.
+
+// 👉 Matlab sabhi ek hi concept ke alag-alag naam hain:
+// Jab bhi aap “Call Stack” suno, samajh lo ki yahi “Execution Context Stack / Program Stack / Control Stack / Runtime Stack / Machine Stack” hai.
