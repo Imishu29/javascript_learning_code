@@ -98,3 +98,44 @@ let sayArrow2 = () => {
 };
 
 sayArrow2(); // ✅ works here after initialization
+
+// Function Work In JS
+
+
+var x = 1;
+console.log(x)
+a()
+b()
+
+console.log(x)
+
+function a(){
+    var x = 10;
+    console.log(x)
+}
+
+function b(){
+    var x = 100;
+    console.log(x)
+}
+
+
+// ---
+
+// ### Phase 2: Execution
+
+// | Step | Code                     | Call Stack         | `x` in GEC | Output  |
+// |------|---------------------------|--------------------|------------|---------|
+// | 1    | `var x = 1`              | [GEC]              | 1          | -       |
+// | 2    | `console.log(x)`         | [GEC]              | 1          | 1 ✓     |
+// | 3    | `a()`                    | [GEC, a()]         | 1          | -       |
+// | 4    | `var x = 10` (inside a)  | [GEC, a()]         | 1 (local x=10) | -   |
+// | 5    | `console.log(x)` (a)     | [GEC, a()]         | 1          | 10 ✓    |
+// | 6    | return from a()         | [GEC] ← a() popped | 1          | -       |
+// | 7    | `b()`                    | [GEC, b()]         | 1          | -       |
+// | 8    | `var x = 100` (inside b) | [GEC, b()]         | 1 (local x=100) | -  |
+// | 9    | `console.log(x)` (b)     | [GEC, b()]         | 1          | 100 ✓   |
+// | 10   | return from b()         | [GEC] ← b() popped | 1          | -       |
+// | 11   | `console.log(x)`        | [GEC]              | 1          | 1 ✓     |
+
+// ✅ **Final Output:**
